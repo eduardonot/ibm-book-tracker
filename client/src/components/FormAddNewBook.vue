@@ -51,27 +51,7 @@ export default {
       }
     }
   },
-  props: {
-    book: {
-      type: Object,
-      required: true
-    }
-  },
-  watch: {
-    book: {
-      handler (val) {
-        this.setBooks(val)
-      },
-      deep: true,
-      immediate: true
-    }
-  },
   methods: {
-    setBooks (data) {
-      this.form.title = data.item.title
-      this.form.author = data.item.author
-      this.bookIndex = data.index
-    },
     closeModal () {
       this.$store.commit('structure/closePreviewNewBookModal')
     },
